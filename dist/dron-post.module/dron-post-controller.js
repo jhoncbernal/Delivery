@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
-const route_1 = require("../lib/route");
+const dron_1 = require("../lib/dron");
 class DronPost {
 }
 __decorate([
@@ -59,13 +59,12 @@ __decorate([
     __metadata("design:type", Number)
 ], DronPost.prototype, "intRange", void 0);
 exports.DronPost = DronPost;
-exports.dronPosts = JSON.parse(JSON.stringify(new route_1.Route('I', 'D', 'A', "main", "in", "out", 3, [0, 0, 0], [0, 0, 0], 10)));
-console.log(exports.dronPosts);
-let DronPostController = class DronPostController {
+exports.dronPosts = JSON.parse(JSON.stringify(new dron_1.Dron('I', 'D', 'A', "main", "in", "out", 3, [0, 0, 0], [0, 0, 0], 10)));
+class DronPostController {
     findAll() {
         return exports.dronPosts;
     }
-};
+}
 __decorate([
     common_1.Get() // registers a `-posts` GET method on the API
     ,
@@ -75,8 +74,5 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Array)
 ], DronPostController.prototype, "findAll", null);
-DronPostController = __decorate([
-    common_1.Controller('dron-posts')
-], DronPostController);
 exports.default = DronPostController;
 //# sourceMappingURL=dron-post-controller.js.map

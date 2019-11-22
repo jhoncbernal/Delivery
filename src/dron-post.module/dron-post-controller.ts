@@ -30,7 +30,7 @@ intRange             :number;
 }
 
 export const dronPosts = JSON.parse(JSON.stringify(new Dron( 'I', 'D', 'A',"main","in","out",3,[0,0,0],[0,0,0],10)))
-console.log(dronPosts);
+
 export default class DronPostController {
   @Get() // registers a `-posts` GET method on the API
   @ApiResponse({ type: DronPost, status: 200, isArray: true }) // for Swagger documentation: API returns an array of  models
