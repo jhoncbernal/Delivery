@@ -41,11 +41,10 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Configure app
 
-Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
+You will need intall the dependences  it's the comand:
 
-- A setting;
-- Another setting;
-- One more setting;
+npm install @nestjs/common@6.5.2 @nestjs/core@6.5.2 @nestjs/platform-express@6.5.2 @nestjs/swagger@3.1.0 @okta/okta-auth-js@2.6.0 @okta/okta-sdk-nodejs@2.0.0 @types/express@4.17.0 @types/node@12.6.2 class-transformer@0.2.3 class-validator@0.9.1 cookie-parser@1.4.4 dotenv@8.0.0 install@0.13.0 reflect-metadata@0.1.13 rxjs@6.5.2 swagger-ui-express@4.0.7 ts-node@8.3.0 typescript@3.5.3 glob@7.1.4 @types/glob@7.1.1
+
 
 ## Running the project
 
@@ -55,6 +54,4 @@ After running the server, direct your browser to http://localhost:3000. An API c
  
 with /dron-posts let's start of route with one drone with 3 lunch that read the file text in.txt and its output is out.text
 with /dron-posts/{id} the parametre id sends the number of drones to get start the route this drones read the files in01.txt, in02.txt, in03.txt, ... , in20.txt (number max is 20)
-
-
 
