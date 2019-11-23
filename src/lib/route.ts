@@ -30,7 +30,7 @@ class Route {
                             ObjDron.arrsDeliveries[intCounter] = "Se supero el numero maximo de envios (" + ObjDron.intMaxRoutes + ") el Dron a sido enviado al puesto de control";
                             throw BreakException;
                         }
-                        if (ObjDron.arriPosition[0] > ObjDron.arriInitialPosition[0] || ObjDron.arriPosition[0] < ObjDron.arriInitialPosition[0] - ObjDron.intRange
+                        if (ObjDron.arriPosition[0] < ObjDron.arriInitialPosition[0] || ObjDron.arriPosition[0] >  ObjDron.arriInitialPosition[0]+ ObjDron.intRange
                             || ObjDron.arriPosition[1] < ObjDron.arriInitialPosition[1] || ObjDron.arriPosition[1] > ObjDron.arriInitialPosition[1] + ObjDron.intRange) {
                             ObjDron.GoBack();
                             ObjDron.arrsDeliveries[intCounter] = "Se supero el rango en la ruta de envios (" + ObjDron.intRange + ") por seguridad el Dron a sido enviado al puesto de control";

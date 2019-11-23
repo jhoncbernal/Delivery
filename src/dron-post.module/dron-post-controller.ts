@@ -29,11 +29,14 @@ export default class DronPostController {
  * @returns string with message to shows 
  */
 private  GenerateNumofDrones(intNumofDrones: number ) :string{
+
+  function pad(decimal) { return (decimal < 10) ? '0' + decimal.toString() : decimal.toString();}
+
   let Routes = new Route();
   
   if (intNumofDrones <= 20 && intNumofDrones > 0) {
       for (let intDronNumber = 1; intDronNumber <= intNumofDrones; intDronNumber++) {
-          let objDron = new Dron('I', 'D', 'A', '', 'out'+intDronNumber+'.txt', 'in'+intDronNumber+'.txt' , 10, [0, 0, 0], [0, 0, 0], 10);
+          let objDron = new Dron('I', 'D', 'A', '', 'out'+pad(intDronNumber)+'.txt', 'in'+pad(intDronNumber)+'.txt' , 10, [0, 0, 0], [0, 0, 0], 10);
           Routes.asyncStart(objDron);
       }
   }else{
@@ -41,4 +44,5 @@ private  GenerateNumofDrones(intNumofDrones: number ) :string{
   }
   return "`This action send #${"+intNumofDrones+"} Drones to route verify the text file out`"
 }
+
 }
