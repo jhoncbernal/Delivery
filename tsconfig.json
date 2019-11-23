@@ -12,7 +12,11 @@
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
       "outDir": "dist"
-    },
+    }, 
+    "typedocOptions": {
+      "mode": "modules",
+      "out": "docs"
+  },
     "exclude": [
       "node_modules"
     ],
