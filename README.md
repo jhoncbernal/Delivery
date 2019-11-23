@@ -1,9 +1,19 @@
+## Author Jhon Casallas Bernal
 # Delivery
 
- Application capable of operating one (n) Drones to deliver lunch to different addresses in the city of Bogotá.
- this project is found based on the Delivery service with Drones. Furthermore aims to be designed for small business. For example,in this case, the restaurant "Su corrientazo" planing delivery 3 lunch each route and the manager program these routes in one text file. This solution was solved with As dynamically typed languages became prominent during the last decade, typeless  programming became the norm for the backend as well as the frontend.NodeJS with to http req Get and Get(id)
+An application capable of operating (n) Drones to deliver lunch to different addresses in the city of Bogotá. this project is found based on the Delivery service with Drones. Furthermore aims to be designed for small business. For example, in this case, the restaurant "Su corrientazo" planing delivery 3 lunch each route and the manager program these routes in one text file.
+An example of the text(in.txt) file that enters the system for one-day delivery
+would:
+AAAADAAA
+IADAD
+AAIADAD
+Where:
+● Letter A corresponds to a forward movement.
+● Letter I corresponds to a 90-degree turn of the drone to the left.
+● The letter D corresponds to a 90-degree turn of the drone to the right.
+ This solution was solved with As dynamically typed languages became prominent during the last decade, typeless programming became the norm for the backend as well as the frontend.NodeJS with to HTTP req Get and Get(id)
 
- You can read more documentacion in docs/index.html
+You can read more documentation in docs/index.html
 
 ---
 ## Requirements
@@ -56,5 +66,5 @@ After running the server, direct your browser to http://localhost:3000. An API c
 with /dron-posts let's start of route with one drone with 3 lunch that read the file text in.txt and its output is out.text
 with /dron-posts/{id} the parametre id sends the number of drones to get start the route this drones read the files in01.txt, in02.txt, in03.txt, ... , in20.txt (number max is 20)
 
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/images/1.png)
 Format: ![Alt Text](url)

@@ -3,16 +3,13 @@ import { ApiModelProperty, ApiResponse } from '../../node_modules/@nestjs/swagge
 import { Dron } from '../lib/dron';
 import { Route } from '../lib/route';
 
-var Drone = new Dron('I', 'D', 'A', '', 'out.txt', 'in.txt' , 3, [0, 0, 0], [0, 0, 0], 10);
-
-export const dronPosts = JSON.parse(JSON.stringify(Drone));
 @Controller('dron-posts')
-
 
 export default class DronPostController {
   @Get() // registers a `-posts` GET method on the API for this case create and send one dron with 3 lunch
   @ApiResponse({ status: 200, isArray: true }) 
   findAll() {
+    var Drone = new Dron('I', 'D', 'A', '', 'out.txt', 'in.txt' , 3, [0, 0, 0], [0, 0, 0], 10);
     let Routes = new Route();
         Routes.asyncStart(Drone);
     return Drone.arrsDeliveries;
