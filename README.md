@@ -11,6 +11,9 @@ Where:
 ● Letter A corresponds to a forward movement.
 ● Letter I corresponds to a 90-degree turn of the drone to the left.
 ● The letter D corresponds to a 90-degree turn of the drone to the right.
+
+Each line of the text file corresponds to a lunch delivery.
+● The drone always starts at the (0, 0) north orientation of the drone to the right.
  This solution was solved with As dynamically typed languages became prominent during the last decade, typeless programming became the norm for the backend as well as the frontend.NodeJS with to HTTP req Get and Get(id)
 
 You can read more documentation in docs/index.html
@@ -67,4 +70,7 @@ with /dron-posts let's start of route with one drone with 3 lunch that read the 
 with /dron-posts/{id} the parametre id sends the number of drones to get start the route this drones read the files in01.txt, in02.txt, in03.txt, ... , in20.txt (number max is 20)
 
 ![GitHub Logo](/images/1.png)
+Format: ![Alt Text](url)
+
+![GitHub Logo](/images/2.png)
 Format: ![Alt Text](url)
