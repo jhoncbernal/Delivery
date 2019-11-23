@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '../node_modules/@nestjs/common';
 import cookieParser from 'cookie-parser';
 import glob from 'glob';
 

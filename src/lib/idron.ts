@@ -1,3 +1,4 @@
+/** More details */
 interface IDron {
     readonly chaRotateLeft        :string;
     readonly chaRotateRigth       :string;
@@ -10,5 +11,6 @@ interface IDron {
     readonly arrsNamePosition     :Array<string>;
     readonly arriInitialPosition  :Array<number>;
     readonly intRange             :number; 
+    readonly arrsDeliveries: Array<string>;
 }
 export { IDron };
