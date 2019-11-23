@@ -67,10 +67,17 @@ npm install @nestjs/common@6.5.2 @nestjs/core@6.5.2 @nestjs/platform-express@6.5
 After running the server, direct your browser to http://localhost:3000. An API console should open with the message “No operations defined in spec”.
  
 with /dron-posts let's start of route with one drone with 3 lunch that read the file text in.txt and its output is out.text
-with /dron-posts/{id} the parametre id sends the number of drones to get start the route this drones read the files in01.txt, in02.txt, in03.txt, ... , in20.txt (number max is 20)
 
 ![GitHub Logo](/images/1.png)
-Format: ![Alt Text](url)
 
+Likewise, the result of each of the drones must remain in the archives of
+different text like this: out01.txt, out02.txt, out03.txt, ..., out20.txt where out01.txt
+corresponds to the report of drone 01, out02.txt corresponds to the report of drone 02 and
+so on.
+
+Likewise, S4N has been notified that drones are now able to deliver
+Up to 10 lunches per route.
+
+
+with /dron-posts/{id} the parametre id sends the number of drones to get start the route this drones read the files in01.txt, in02.txt, in03.txt, ... , in20.txt (number max is 20)
 ![GitHub Logo](/images/2.png)
-Format: ![Alt Text](url)
