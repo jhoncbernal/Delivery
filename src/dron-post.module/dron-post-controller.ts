@@ -1,44 +1,44 @@
-import { Controller, Get } from '../../node_modules/@nestjs/common';
+import { Controller, Get, Param, Post, Body, Put } from '../../node_modules/@nestjs/common';
 import { ApiModelProperty, ApiResponse } from '../../node_modules/@nestjs/swagger';
 import { Dron } from '../lib/dron';
 import { Route } from '../lib/route';
-var Routes = new Route();
-let intDronNumber=3;
 
-export class DronPost {
-@ApiModelProperty()
-chaRotateLeft        :string;
-@ApiModelProperty()
-chaRotateRigth       :string;
-@ApiModelProperty()
-chaAdvance           :string;
-@ApiModelProperty()
-strMainPath          :string;
-@ApiModelProperty()
-strNameFileOutput    :string;
-@ApiModelProperty()
-strNameFileInput     :string;
-@ApiModelProperty()
-intMaxRoutes         :number;
-@ApiModelProperty()
-arriPosition         :Array<number>;
-@ApiModelProperty()
-arrsNamePosition     :Array<string>;
-@ApiModelProperty()
-arriInitialPosition  :Array<number>;
-@ApiModelProperty()
-intRange             :number;  
-}
+var Drone = new Dron('I', 'D', 'A', '', 'out.txt', 'in.txt' , 3, [0, 0, 0], [0, 0, 0], 10);
 
-var Drones = new Dron('I', 'D', 'A', '', 'out'+intDronNumber+'.txt', 'in'+intDronNumber+'.txt' , 3, [0, 0, 0], [0, 0, 0], 10);
-Routes.asyncStart(Drones);
-
-export const dronPosts = JSON.parse(JSON.stringify(Drones));
+export const dronPosts = JSON.parse(JSON.stringify(Drone));
 @Controller('dron-posts')
+
+
 export default class DronPostController {
-  @Get() // registers a `-posts` GET method on the API
-  @ApiResponse({ type: DronPost, status: 200, isArray: true }) // for Swagger documentation: API returns an array of  models
-  findAll(): Array<DronPost> {
-    return dronPosts;
+  @Get() // registers a `-posts` GET method on the API for this case create and send one dron with 3 lunch
+  @ApiResponse({ status: 200, isArray: true }) 
+  findAll() {
+    let Routes = new Route();
+        Routes.asyncStart(Drone);
+    return Drone.arrsDeliveries;
   }
+
+  @Get(':id')// registers a `-posts` GET method on the API for this case create the number of drones send into the id and send each one with 10 lunch 
+  findOne(@Param('id') id: string) {
+    return this.GenerateNumofDrones(Number(id));
+  }
+
+/**
+ * this method create loop to instance n number (<20) and send to road with 10 lunch each one
+ * @param intNumofDrones Number of Drones to need to create and sent to road
+ * @returns string with message to shows 
+ */
+private  GenerateNumofDrones(intNumofDrones: number ) :string{
+  let Routes = new Route();
+  
+  if (intNumofDrones <= 20 && intNumofDrones > 0) {
+      for (let intDronNumber = 1; intDronNumber <= intNumofDrones; intDronNumber++) {
+          let objDron = new Dron('I', 'D', 'A', '', 'out'+intDronNumber+'.txt', 'in'+intDronNumber+'.txt' , 10, [0, 0, 0], [0, 0, 0], 10);
+          Routes.asyncStart(objDron);
+      }
+  }else{
+      return "can not send more than 20 drones please reduce the amount he tries again"
+  }
+  return "`This action send #${"+intNumofDrones+"} Drones to route verify the text file out`"
+}
 }
