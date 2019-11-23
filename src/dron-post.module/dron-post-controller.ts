@@ -2,6 +2,9 @@ import { Controller, Get } from '../../node_modules/@nestjs/common';
 import { ApiModelProperty, ApiResponse } from '../../node_modules/@nestjs/swagger';
 import { Dron } from '../lib/dron';
 import { Route } from '../lib/route';
+var Routes = new Route();
+let intDronNumber=3;
+
 export class DronPost {
 @ApiModelProperty()
 chaRotateLeft        :string;
@@ -26,10 +29,10 @@ arriInitialPosition  :Array<number>;
 @ApiModelProperty()
 intRange             :number;  
 }
-var Routes = new Route();
-let intDronNumber=3;
+
 var Drones = new Dron('I', 'D', 'A', '', 'out'+intDronNumber+'.txt', 'in'+intDronNumber+'.txt' , 3, [0, 0, 0], [0, 0, 0], 10);
 Routes.asyncStart(Drones);
+
 export const dronPosts = JSON.parse(JSON.stringify(Drones));
 @Controller('dron-posts')
 export default class DronPostController {
